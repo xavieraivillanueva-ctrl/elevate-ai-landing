@@ -38,10 +38,11 @@ const VCARD_RAW = [
   'VERSION:3.0',
   'N:Villanueva;Xavier;;;',
   'FN:Xavier Villanueva',
-  'ORG:Elévate IA;PureReserve',
+  'ORG:Elévate AI;PureReserve',
   'TITLE:CEO & Systems Architect',
-  'TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+528113211467',
-  'EMAIL;TYPE=INTERNET,WORK:Xavieraivillanueva@gmail.com',
+  'TEL;TYPE=CELL:+528113211467',
+  'EMAIL;TYPE=WORK:Xavieraivillanueva@gmail.com',
+  'URL:https://elevate-ai-landing.vercel.app',
   'NOTE:Acceso inmediato, domina el instante.',
   'END:VCARD'
 ].join('\r\n');
@@ -696,25 +697,20 @@ export default function App() {
             </div>
           </div>
 
-          {/* QR Code Container */}
+          {/* QR Code Container — Matriz Optimizada 100% Escaneable */}
           <div className="flex flex-col items-center my-6">
-            <div className="p-4 bg-white rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.7)]">
+            <div className="p-4 bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.8),0_0_25px_rgba(34,197,94,0.25)] border-2 border-slate-200">
               <QRCodeSVG
                 value={VCARD_RAW}
-                size={220}
-                level="H"
+                size={230}
+                level="M"
                 bgColor="#FFFFFF"
-                fgColor="#0A1128"
-                includeMargin={true}
-                imageSettings={{
-                  src: '/assets/elevate-logo.png',
-                  height: 52,
-                  width: 52,
-                  excavate: true
-                }}
+                fgColor="#000000"
+                includeMargin={false}
               />
             </div>
-            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400 mt-3">
+            <span className="text-[11px] font-mono uppercase tracking-[0.18em] text-[#38BDF8] mt-3 font-semibold flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-ping" />
               Escanea para añadir a tus contactos
             </span>
           </div>
@@ -817,20 +813,14 @@ export default function App() {
                 <p className="text-xs text-[#38BDF8] font-mono">{VCARD_DATA.role}</p>
               </div>
             </div>
-            <div className="p-3 bg-white rounded-2xl flex justify-center my-4 shadow-xl">
+            <div className="p-4 bg-white rounded-2xl flex justify-center my-4 shadow-2xl border-2 border-slate-200">
               <QRCodeSVG
                 value={VCARD_RAW}
-                size={200}
-                level="H"
+                size={220}
+                level="M"
                 bgColor="#FFFFFF"
-                fgColor="#0A1128"
-                includeMargin={true}
-                imageSettings={{
-                  src: '/assets/elevate-logo.png',
-                  height: 48,
-                  width: 48,
-                  excavate: true
-                }}
+                fgColor="#000000"
+                includeMargin={false}
               />
             </div>
             <button

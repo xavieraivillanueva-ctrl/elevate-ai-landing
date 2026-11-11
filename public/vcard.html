@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050814">
-<meta name="description" content="Tarjeta de Contacto Digital vCard 3.0 — Xavier Villanueva | CEO & Systems Architect en Elévate AI & PureReserve.">
+<meta name="description" content="Tarjeta de Contacto Digital vCard 3.0 Oficial — Xavier Villanueva | CEO & Systems Architect en Elévate AI & PureReserve.">
 <link rel="icon" href="assets/elevate-logo.png" type="image/png">
-<title>Xavier Villanueva — vCard 3.0 Oficial | Elévate AI</title>
+<title>Xavier Villanueva — Contacto Oficial | Elévate AI</title>
 <style>
   :root {
     --bg-dark: #050814;
@@ -30,49 +30,49 @@
     justify-content: center;
     padding: 24px 16px;
     background-image: 
-      radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.22) 0%, transparent 55%),
-      radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.16) 0%, transparent 55%),
+      radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.25) 0%, transparent 60%),
+      radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.2) 0%, transparent 60%),
       linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 3rem 3rem, 3rem 3rem;
   }
   .card-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 410px;
     background: var(--card-bg);
-    border: 1px solid rgba(56, 189, 248, 0.22);
+    border: 1px solid rgba(56, 189, 248, 0.25);
     border-radius: 28px;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(2, 132, 199, 0.22);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(2, 132, 199, 0.25);
     position: relative;
     backdrop-blur: 16px;
   }
   .header-gradient {
     padding: 26px 20px 20px;
-    background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(56, 189, 248, 0.12) 50%, rgba(34, 197, 94, 0.15) 100%);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.28) 0%, rgba(56, 189, 248, 0.15) 50%, rgba(34, 197, 94, 0.18) 100%);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.18);
     text-align: center;
     position: relative;
   }
   .avatar-wrap {
-    width: 76px;
-    height: 76px;
-    margin: 0 auto 14px;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 12px;
     padding: 2px;
-    border-radius: 22px;
+    border-radius: 24px;
     background: linear-gradient(135deg, var(--blue-neon), var(--cyan-neon), var(--green-circuit));
-    box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.45);
   }
   .avatar-inner {
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 22px;
     background: #060B18;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: 4px;
+    padding: 5px;
   }
   .avatar-inner img {
     width: 100%;
@@ -80,56 +80,91 @@
     object-fit: contain;
   }
   h1 {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: #FFF;
     margin-bottom: 4px;
   }
   .title-tag {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--cyan-neon);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     margin-bottom: 4px;
     font-family: ui-monospace, SFMono-Regular, monospace;
   }
   .org-tag {
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     color: var(--text-muted);
     font-weight: 500;
   }
   .body-content {
-    padding: 24px 20px 28px;
+    padding: 22px 20px 26px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 16px;
+  }
+  .qr-mode-switch {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3px;
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    width: 100%;
+  }
+  .qr-mode-btn {
+    flex: 1;
+    padding: 7px 10px;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: ui-monospace, monospace;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .qr-mode-btn.active {
+    background: linear-gradient(135deg, var(--blue-neon), var(--green-circuit));
+    color: #040814;
+    font-weight: 800;
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.35);
   }
   .qr-wrapper {
     background: #FFFFFF;
-    padding: 14px;
+    padding: 16px;
     border-radius: 22px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(34, 197, 94, 0.2);
-    display: inline-flex;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(34, 197, 94, 0.25);
+    display: flex;
     align-items: center;
     justify-content: center;
+    border: 3px solid #E2E8F0;
+  }
+  .qr-wrapper svg {
+    display: block;
+    width: 220px;
+    height: 220px;
   }
   .qr-caption {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    color: rgba(255, 255, 255, 0.55);
+    color: var(--cyan-neon);
     font-family: ui-monospace, SFMono-Regular, monospace;
     text-align: center;
-    margin-top: -6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
   .contact-items {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 8px;
   }
   .contact-btn {
     display: flex;
@@ -138,7 +173,7 @@
     padding: 12px 14px;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(56, 189, 248, 0.15);
+    border: 1px solid rgba(56, 189, 248, 0.16);
     text-decoration: none;
     color: #FFF;
     font-size: 0.82rem;
@@ -146,7 +181,7 @@
     transition: all 0.2s ease;
   }
   .contact-btn:hover {
-    background: rgba(56, 189, 248, 0.08);
+    background: rgba(56, 189, 248, 0.09);
     border-color: var(--green-circuit);
     transform: translateY(-1px);
   }
@@ -161,7 +196,7 @@
   }
   .slogan-box {
     width: 100%;
-    padding: 11px 14px;
+    padding: 10px 14px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -175,7 +210,7 @@
     padding: 15px;
     border-radius: 16px;
     border: none;
-    font-size: 0.85rem;
+    font-size: 0.88rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -187,6 +222,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    text-decoration: none;
     transition: transform 0.15s ease, filter 0.15s ease;
   }
   .cta-download:hover {
@@ -196,19 +232,13 @@
   .cta-download:active {
     transform: scale(0.98);
   }
-  .action-row {
-    width: 100%;
-    display: grid;
-    grid-template-cols: 1fr 1fr;
-    gap: 8px;
-  }
   .share-btn {
     padding: 11px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(56, 189, 248, 0.2);
     color: #FFF;
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     font-family: ui-monospace, monospace;
     text-transform: uppercase;
     cursor: pointer;
@@ -219,6 +249,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
+    flex: 1;
   }
   .share-btn:hover {
     background: rgba(56, 189, 248, 0.1);
@@ -226,7 +257,7 @@
   }
   .footer-sub {
     font-size: 0.7rem;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.45);
     margin-top: 18px;
     font-family: ui-monospace, SFMono-Regular, monospace;
     text-align: center;
@@ -249,24 +280,45 @@
   <div class="header-gradient">
     <div class="avatar-wrap">
       <div class="avatar-inner">
-        <img src="assets/elevate-logo.png" alt="Elévate AI Logo">
+        <img src="assets/elevate-logo.png" alt="Elévate AI Logo Oficial">
       </div>
     </div>
     <h1>Xavier Villanueva</h1>
-    <div class="title-tag">CEO & Systems Architect</div>
+    <div class="title-tag">CEO &amp; Systems Architect</div>
     <div class="org-tag">Elévate AI &bull; PureReserve</div>
   </div>
 
   <div class="body-content">
-    <div class="qr-wrapper">
-      <div id="qrcode"></div>
+    <!-- Selector de Modo QR -->
+    <div class="qr-mode-switch">
+      <button id="btnModeVcard" class="qr-mode-btn active" onclick="setQrMode('vcard')">
+        📱 Contacto vCard
+      </button>
+      <button id="btnModeWeb" class="qr-mode-btn" onclick="setQrMode('web')">
+        🌐 Enlace Web
+      </button>
     </div>
-    <div class="qr-caption">Escanea para sincronizar en contactos</div>
 
+    <!-- QR Code Directo 100% Escaneable -->
+    <div class="qr-wrapper">
+      <div id="qrDirect">
+        <svg height="220" width="220" viewBox="0 0 77 77" role="img"><path fill="#FFFFFF" d="M0,0 h77v77H0z" shape-rendering="crispEdges"></path><path fill="#000000" d="M4 4h7v1H4zM12 4h3v1H12zM20 4h1v1H20zM22 4h7v1H22zM31 4h1v1H31zM35 4h1v1H35zM37 4h1v1H37zM39 4h1v1H39zM41 4h1v1H41zM45 4h4v1H45zM50 4h1v1H50zM53 4h1v1H53zM55 4h2v1H55zM58 4h7v1H58zM66,4 h7v1H66zM4 5h1v1H4zM10 5h1v1H10zM12 5h3v1H12zM18 5h3v1H18zM22 5h5v1H22zM28 5h2v1H28zM31 5h1v1H31zM36 5h2v1H36zM41 5h6v1H41zM48 5h1v1H48zM52 5h1v1H52zM54 5h1v1H54zM56 5h3v1H56zM60 5h2v1H60zM66 5h1v1H66zM72,5 h1v1H72zM4 6h1v1H4zM6 6h3v1H6zM10 6h1v1H10zM13 6h1v1H13zM17 6h1v1H17zM19 6h2v1H19zM22 6h3v1H22zM28 6h4v1H28zM33 6h1v1H33zM36 6h1v1H36zM38 6h4v1H38zM43 6h1v1H43zM47 6h1v1H47zM50 6h1v1H50zM52 6h6v1H52zM59 6h2v1H59zM62 6h1v1H62zM66 6h1v1H66zM68 6h3v1H68zM72,6 h1v1H72zM4 7h1v1H4zM6 7h3v1H6zM10 7h1v1H10zM12 7h2v1H12zM20 7h4v1H20zM26 7h1v1H26zM28 7h7v1H28zM40 7h1v1H40zM42 7h2v1H42zM45 7h2v1H45zM50 7h4v1H50zM58 7h2v1H58zM64 7h1v1H64zM66 7h1v1H66zM68 7h3v1H68zM72,7 h1v1H72zM4 8h1v1H4zM6 8h3v1H6zM10 8h1v1H10zM15 8h4v1H15zM20 8h2v1H20zM23 8h1v1H23zM25 8h1v1H25zM27 8h1v1H27zM30 8h2v1H30zM34 8h9v1H34zM45 8h1v1H45zM47 8h3v1H47zM52 8h1v1H52zM54 8h1v1H54zM56 8h2v1H56zM60 8h3v1H60zM64 8h1v1H64zM66 8h1v1H66zM68 8h3v1H68zM72,8 h1v1H72zM4 9h1v1H4zM10 9h1v1H10zM16 9h1v1H16zM20 9h1v1H20zM25 9h1v1H25zM28 9h2v1H28zM31 9h4v1H31zM36 9h1v1H36zM40 9h2v1H40zM43 9h1v1H43zM46 9h1v1H46zM48 9h1v1H48zM50 9h3v1H50zM54 9h1v1H54zM57 9h2v1H57zM62 9h1v1H62zM66 9h1v1H66zM72,9 h1v1H72zM4 10h7v1H4zM12 10h1v1H12zM14 10h1v1H14zM16 10h1v1H16zM18 10h1v1H18zM20 10h1v1H20zM22 10h1v1H22zM24 10h1v1H24zM26 10h1v1H26zM28 10h1v1H28zM30 10h1v1H30zM32 10h1v1H32zM34 10h1v1H34zM36 10h1v1H36zM38 10h1v1H38zM40 10h1v1H40zM42 10h1v1H42zM44 10h1v1H44zM46 10h1v1H46zM48 10h1v1H48zM50 10h1v1H50zM52 10h1v1H52zM54 10h1v1H54zM56 10h1v1H56zM58 10h1v1H58zM60 10h1v1H60zM62 10h1v1H62zM64 10h1v1H64zM66,10 h7v1H66zM12 11h2v1H12zM16 11h1v1H16zM18 11h2v1H18zM21 11h3v1H21zM26 11h5v1H26zM33 11h1v1H33zM36 11h1v1H36zM40 11h1v1H40zM42 11h1v1H42zM44 11h1v1H44zM46 11h3v1H46zM50 11h1v1H50zM52 11h1v1H52zM54 11h1v1H54zM59 11h1v1H59zM61 11h2v1H61zM64 11h1v1H64zM4 12h1v1H4zM6 12h2v1H6zM9 12h3v1H9zM14 12h1v1H14zM16 12h4v1H16zM21 12h2v1H21zM25 12h1v1H25zM27 12h3v1H27zM33 12h1v1H33zM36 12h5v1H36zM43 12h2v1H43zM46 12h1v1H46zM50 12h2v1H50zM54 12h2v1H54zM58 12h2v1H58zM64 12h1v1H64zM66 12h1v1H66zM69 12h1v1H69zM71,12 h2v1H71zM8 13h2v1H8zM16 13h1v1H16zM18 13h2v1H18zM21 13h2v1H21zM24 13h2v1H24zM27 13h3v1H27zM34 13h5v1H34zM40 13h2v1H40zM43 13h3v1H43zM53 13h1v1H53zM55 13h6v1H55zM63 13h3v1H63zM69 13h1v1H69zM72,13 h1v1H72zM6 14h1v1H6zM10 14h2v1H10zM13 14h2v1H13zM16 14h3v1H16zM20 14h1v1H20zM22 14h3v1H22zM28 14h6v1H28zM35 14h1v1H35zM38 14h2v1H38zM41 14h1v1H41zM43 14h1v1H43zM45 14h1v1H45zM47 14h2v1H47zM50 14h1v1H50zM52 14h1v1H52zM55 14h4v1H55zM62 14h1v1H62zM65 14h1v1H65zM69 14h1v1H69zM71,14 h2v1H71zM4 15h1v1H4zM8 15h1v1H8zM14 15h3v1H14zM20 15h2v1H20zM24 15h3v1H24zM29 15h1v1H29zM31 15h1v1H31zM33 15h2v1H33zM37 15h3v1H37zM41 15h1v1H41zM46 15h2v1H46zM50 15h1v1H50zM52 15h3v1H52zM57 15h2v1H57zM62 15h1v1H62zM66 15h1v1H66zM69 15h1v1H69zM4 16h1v1H4zM6 16h2v1H6zM10 16h2v1H10zM17 16h1v1H17zM19 16h1v1H19zM21 16h1v1H21zM23 16h2v1H23zM27 16h2v1H27zM32 16h3v1H32zM36 16h1v1H36zM39 16h1v1H39zM49 16h2v1H49zM52 16h1v1H52zM54 16h2v1H54zM58 16h2v1H58zM63 16h1v1H63zM65 16h2v1H65zM4 17h2v1H4zM8 17h1v1H8zM11 17h2v1H11zM20 17h1v1H20zM22 17h1v1H22zM26 17h1v1H26zM28 17h4v1H28zM33 17h1v1H33zM35 17h1v1H35zM40 17h3v1H40zM44 17h2v1H44zM47 17h3v1H47zM51 17h1v1H51zM53 17h4v1H53zM59 17h3v1H59zM63 17h1v1H63zM66 17h2v1H66zM69 17h1v1H69zM71 17h1v1H71zM5 18h2v1H5zM9 18h8v1H9zM18 18h2v1H18zM22 18h4v1H22zM27 18h2v1H27zM30 18h3v1H30zM37 18h3v1H37zM41 18h6v1H41zM48 18h1v1H48zM51 18h3v1H51zM55 18h1v1H55zM58 18h2v1H58zM61 18h6v1H61zM69 18h3v1H69zM4 19h1v1H4zM7 19h1v1H7zM9 19h1v1H9zM13 19h2v1H13zM17 19h2v1H17zM20 19h4v1H20zM25 19h1v1H25zM27 19h1v1H27zM29 19h1v1H29zM33 19h3v1H33zM40 19h4v1H40zM45 19h4v1H45zM52 19h5v1H52zM61 19h2v1H61zM64 19h1v1H64zM66 19h1v1H66zM68,19 h5v1H68zM6 20h2v1H6zM10 20h1v1H10zM14 20h1v1H14zM16 20h1v1H16zM20 20h1v1H20zM22 20h1v1H22zM24 20h1v1H24zM27 20h1v1H27zM30 20h3v1H30zM35 20h1v1H35zM38 20h3v1H38zM47 20h3v1H47zM53 20h3v1H53zM59 20h1v1H59zM62 20h1v1H62zM64 20h1v1H64zM69 20h2v1H69zM4 21h2v1H4zM11 21h1v1H11zM14 21h2v1H14zM18 21h1v1H18zM20 21h1v1H20zM23 21h1v1H23zM25 21h1v1H25zM27 21h3v1H27zM32 21h3v1H32zM36 21h3v1H36zM42 21h1v1H42zM44 21h2v1H44zM49 21h3v1H49zM56 21h2v1H56zM59 21h5v1H59zM68 21h2v1H68zM71,21 h2v1H71zM4 22h1v1H4zM6 22h3v1H6zM10 22h3v1H10zM15 22h2v1H15zM19 22h4v1H19zM28 22h1v1H28zM31 22h1v1H31zM34 22h4v1H34zM39 22h2v1H39zM43 22h1v1H43zM45 22h1v1H45zM47 22h1v1H47zM49 22h2v1H49zM52 22h1v1H52zM54 22h1v1H54zM59 22h2v1H59zM63 22h1v1H63zM65 22h1v1H65zM67 22h4v1H67zM5 23h2v1H5zM8 23h2v1H8zM12 23h1v1H12zM16 23h3v1H16zM20 23h1v1H20zM23 23h1v1H23zM25 23h1v1H25zM29 23h4v1H29zM34 23h4v1H34zM39 23h3v1H39zM43 23h1v1H43zM45 23h1v1H45zM50 23h3v1H50zM56 23h2v1H56zM62 23h2v1H62zM65 23h3v1H65zM71 23h1v1H71zM7 24h2v1H7zM10 24h2v1H10zM13 24h2v1H13zM17 24h1v1H17zM19 24h1v1H19zM21 24h2v1H21zM25 24h2v1H25zM29 24h2v1H29zM32 24h1v1H32zM35 24h1v1H35zM38 24h1v1H38zM44 24h3v1H44zM49 24h3v1H49zM55 24h3v1H55zM61 24h2v1H61zM64 24h1v1H64zM66 24h3v1H66zM72,24 h1v1H72zM4 25h5v1H4zM11 25h1v1H11zM15 25h4v1H15zM20 25h2v1H20zM25 25h1v1H25zM30 25h1v1H30zM33 25h1v1H33zM37 25h1v1H37zM39 25h2v1H39zM45 25h3v1H45zM52 25h2v1H52zM56 25h1v1H56zM58 25h1v1H58zM65 25h1v1H65zM67 25h1v1H67zM69 25h1v1H69zM71 25h1v1H71zM5 26h1v1H5zM7 26h1v1H7zM10 26h2v1H10zM15 26h1v1H15zM18 26h1v1H18zM22 26h8v1H22zM31 26h2v1H31zM42 26h1v1H42zM45 26h2v1H45zM55 26h1v1H55zM59 26h2v1H59zM62 26h1v1H62zM64 26h1v1H64zM66 26h1v1H66zM70,26 h3v1H70zM5 27h5v1H5zM12 27h2v1H12zM16 27h1v1H16zM19 27h3v1H19zM24 27h4v1H24zM29 27h2v1H29zM32 27h1v1H32zM37 27h3v1H37zM41 27h2v1H41zM46 27h1v1H46zM48 27h2v1H48zM51 27h2v1H51zM54 27h1v1H54zM56 27h1v1H56zM59 27h2v1H59zM65 27h2v1H65zM68 27h2v1H68zM72,27 h1v1H72zM4 28h1v1H4zM7 28h4v1H7zM13 28h1v1H13zM15 28h2v1H15zM18 28h3v1H18zM22 28h4v1H22zM27 28h1v1H27zM29 28h1v1H29zM31 28h1v1H31zM33 28h2v1H33zM37 28h1v1H37zM41 28h1v1H41zM43 28h1v1H43zM49 28h4v1H49zM55 28h1v1H55zM59 28h1v1H59zM70,28 h3v1H70zM5 29h3v1H5zM13 29h2v1H13zM16 29h1v1H16zM20 29h2v1H20zM24 29h1v1H24zM26 29h1v1H26zM28 29h1v1H28zM30 29h1v1H30zM33 29h1v1H33zM38 29h1v1H38zM41 29h2v1H41zM49 29h1v1H49zM54 29h2v1H54zM59 29h3v1H59zM65 29h2v1H65zM68 29h1v1H68zM71 29h1v1H71zM4 30h3v1H4zM10 30h1v1H10zM12 30h1v1H12zM17 30h4v1H17zM24 30h4v1H24zM29 30h1v1H29zM31 30h3v1H31zM35 30h1v1H35zM37 30h1v1H37zM39 30h1v1H39zM41 30h3v1H41zM45 30h1v1H45zM48 30h1v1H48zM51 30h1v1H51zM53 30h3v1H53zM60 30h2v1H60zM64 30h3v1H64zM70 30h1v1H70zM6 31h1v1H6zM8 31h1v1H8zM11 31h1v1H11zM13 31h2v1H13zM17 31h3v1H17zM24 31h2v1H24zM29 31h1v1H29zM32 31h1v1H32zM34 31h2v1H34zM37 31h1v1H37zM41 31h1v1H41zM43 31h2v1H43zM47 31h1v1H47zM51 31h2v1H51zM55 31h2v1H55zM59 31h2v1H59zM63 31h3v1H63zM69 31h3v1H69zM5 32h2v1H5zM10 32h2v1H10zM13 32h1v1H13zM15 32h4v1H15zM22 32h2v1H22zM27 32h1v1H27zM29 32h1v1H29zM31 32h2v1H31zM35 32h9v1H35zM48 32h1v1H48zM50 32h1v1H50zM53 32h3v1H53zM58 32h3v1H58zM64 32h4v1H64zM69,32 h4v1H69zM4 33h1v1H4zM6 33h1v1H6zM11 33h2v1H11zM15 33h1v1H15zM17 33h1v1H17zM19 33h4v1H19zM27 33h6v1H27zM34 33h1v1H34zM36 33h3v1H36zM40 33h2v1H40zM45 33h1v1H45zM49 33h2v1H49zM52 33h2v1H52zM61 33h2v1H61zM67 33h1v1H67zM71,33 h2v1H71zM5 34h2v1H5zM8 34h3v1H8zM18 34h3v1H18zM22 34h2v1H22zM25 34h1v1H25zM27 34h3v1H27zM31 34h2v1H31zM34 34h1v1H34zM37 34h1v1H37zM39 34h2v1H39zM44 34h3v1H44zM49 34h2v1H49zM53 34h1v1H53zM55 34h1v1H55zM57 34h1v1H57zM59 34h1v1H59zM61 34h2v1H61zM66 34h3v1H66zM6 35h2v1H6zM12 35h3v1H12zM16 35h2v1H16zM19 35h1v1H19zM21 35h2v1H21zM24 35h1v1H24zM27 35h2v1H27zM31 35h2v1H31zM35 35h3v1H35zM39 35h1v1H39zM43 35h1v1H43zM46 35h1v1H46zM49 35h2v1H49zM53 35h2v1H53zM59 35h1v1H59zM64 35h1v1H64zM66 35h1v1H66zM71,35 h2v1H71zM4 36h1v1H4zM8 36h6v1H8zM16 36h1v1H16zM18 36h1v1H18zM21 36h1v1H21zM25 36h3v1H25zM29 36h4v1H29zM35 36h6v1H35zM42 36h4v1H42zM49 36h3v1H49zM53 36h5v1H53zM59 36h1v1H59zM64 36h5v1H64zM71 36h1v1H71zM7 37h2v1H7zM12 37h3v1H12zM20 37h1v1H20zM25 37h1v1H25zM28 37h1v1H28zM30 37h2v1H30zM33 37h2v1H33zM36 37h1v1H36zM40 37h2v1H40zM46 37h1v1H46zM48 37h1v1H48zM53 37h1v1H53zM58 37h2v1H58zM61 37h1v1H61zM64 37h1v1H64zM68 37h1v1H68zM70 37h1v1H70zM4 38h1v1H4zM7 38h2v1H7zM10 38h1v1H10zM12 38h2v1H12zM16 38h3v1H16zM20 38h1v1H20zM22 38h1v1H22zM24 38h1v1H24zM26 38h1v1H26zM28 38h2v1H28zM31 38h1v1H31zM34 38h3v1H34zM38 38h1v1H38zM40 38h4v1H40zM45 38h1v1H45zM47 38h1v1H47zM50 38h2v1H50zM54 38h1v1H54zM57 38h2v1H57zM60 38h3v1H60zM64 38h1v1H64zM66 38h1v1H66zM68 38h2v1H68zM71,38 h2v1H71zM4 39h1v1H4zM6 39h1v1H6zM8 39h1v1H8zM12 39h1v1H12zM16 39h1v1H16zM18 39h2v1H18zM21 39h3v1H21zM28 39h1v1H28zM32 39h1v1H32zM35 39h2v1H35zM40 39h1v1H40zM43 39h1v1H43zM45 39h1v1H45zM47 39h2v1H47zM50 39h2v1H50zM56 39h1v1H56zM60 39h2v1H60zM64 39h1v1H64zM68 39h1v1H68zM71,39 h2v1H71zM4 40h2v1H4zM7 40h6v1H7zM14 40h2v1H14zM19 40h1v1H19zM21 40h2v1H21zM26 40h3v1H26zM30 40h2v1H30zM33 40h2v1H33zM36 40h8v1H36zM45 40h3v1H45zM52 40h1v1H52zM54 40h2v1H54zM58 40h2v1H58zM61 40h8v1H61zM72,40 h1v1H72zM4 41h2v1H4zM7 41h1v1H7zM12 41h1v1H12zM14 41h5v1H14zM20 41h5v1H20zM30 41h1v1H30zM33 41h3v1H33zM37 41h2v1H37zM40 41h4v1H40zM53 41h3v1H53zM59 41h3v1H59zM65 41h1v1H65zM67 41h1v1H67zM8 42h6v1H8zM16 42h1v1H16zM21 42h1v1H21zM28 42h2v1H28zM33 42h1v1H33zM35 42h2v1H35zM39 42h3v1H39zM43 42h2v1H43zM46 42h2v1H46zM49 42h2v1H49zM53 42h1v1H53zM55 42h1v1H55zM60 42h2v1H60zM67 42h3v1H67zM4 43h2v1H4zM9 43h1v1H9zM12 43h1v1H12zM14 43h7v1H14zM22 43h2v1H22zM26 43h1v1H26zM29 43h2v1H29zM32 43h1v1H32zM36 43h3v1H36zM40 43h4v1H40zM46 43h1v1H46zM48 43h3v1H48zM54 43h2v1H54zM57 43h5v1H57zM63 43h1v1H63zM65 43h2v1H65zM70,43 h3v1H70zM4 44h1v1H4zM7 44h4v1H7zM12 44h7v1H12zM20 44h1v1H20zM28 44h1v1H28zM36 44h2v1H36zM39 44h2v1H39zM42 44h2v1H42zM45 44h1v1H45zM47 44h3v1H47zM53 44h1v1H53zM57 44h5v1H57zM63 44h2v1H63zM66 44h3v1H66zM70 44h1v1H70zM72,44 h1v1H72zM4 45h2v1H4zM7 45h1v1H7zM11 45h1v1H11zM15 45h4v1H15zM21 45h6v1H21zM28 45h1v1H28zM30 45h3v1H30zM34 45h1v1H34zM36 45h1v1H36zM38 45h4v1H38zM43 45h3v1H43zM48 45h3v1H48zM55 45h2v1H55zM61 45h2v1H61zM68 45h1v1H68zM70,45 h3v1H70zM4 46h1v1H4zM6 46h1v1H6zM9 46h3v1H9zM14 46h1v1H14zM20 46h1v1H20zM22 46h3v1H22zM28 46h1v1H28zM30 46h5v1H30zM36 46h1v1H36zM40 46h3v1H40zM47 46h3v1H47zM51 46h3v1H51zM56 46h2v1H56zM61 46h4v1H61zM67 46h1v1H67zM69 46h3v1H69zM5 47h1v1H5zM7 47h2v1H7zM14 47h2v1H14zM17 47h1v1H17zM19 47h1v1H19zM21 47h4v1H21zM26 47h1v1H26zM32 47h1v1H32zM36 47h1v1H36zM40 47h1v1H40zM42 47h4v1H42zM47 47h2v1H47zM51 47h2v1H51zM55 47h1v1H55zM57 47h1v1H57zM59 47h1v1H59zM61 47h2v1H61zM65 47h1v1H65zM67 47h1v1H67zM71,47 h2v1H71zM4 48h1v1H4zM6 48h1v1H6zM9 48h5v1H9zM17 48h1v1H17zM19 48h1v1H19zM23 48h2v1H23zM27 48h1v1H27zM29 48h1v1H29zM36 48h3v1H36zM40 48h2v1H40zM43 48h3v1H43zM49 48h2v1H49zM53 48h1v1H53zM56 48h2v1H56zM59 48h1v1H59zM61 48h2v1H61zM64 48h1v1H64zM66 48h1v1H66zM69 48h2v1H69zM4 49h3v1H4zM8 49h1v1H8zM14 49h4v1H14zM19 49h1v1H19zM24 49h1v1H24zM31 49h1v1H31zM33 49h1v1H33zM37 49h3v1H37zM41 49h1v1H41zM43 49h2v1H43zM46 49h3v1H46zM51 49h1v1H51zM53 49h1v1H53zM57 49h2v1H57zM60 49h1v1H60zM69 49h2v1H69zM72,49 h1v1H72zM5 50h1v1H5zM8 50h6v1H8zM15 50h2v1H15zM19 50h9v1H19zM31 50h2v1H31zM37 50h2v1H37zM40 50h2v1H40zM49 50h2v1H49zM57 50h1v1H57zM60 50h1v1H60zM62 50h2v1H62zM65 50h4v1H65zM71,50 h2v1H71zM4 51h1v1H4zM8 51h1v1H8zM16 51h3v1H16zM20 51h1v1H20zM23 51h3v1H23zM27 51h3v1H27zM31 51h1v1H31zM33 51h1v1H33zM35 51h1v1H35zM39 51h1v1H39zM41 51h4v1H41zM47 51h1v1H47zM49 51h2v1H49zM52 51h1v1H52zM59 51h1v1H59zM62 51h5v1H62zM68 51h2v1H68zM71,51 h2v1H71zM5 52h3v1H5zM9 52h2v1H9zM12 52h4v1H12zM17 52h1v1H17zM22 52h2v1H22zM28 52h1v1H28zM31 52h4v1H31zM38 52h1v1H38zM41 52h1v1H41zM45 52h1v1H45zM51 52h3v1H51zM57 52h3v1H57zM61 52h2v1H61zM64 52h2v1H64zM67 52h3v1H67zM5 53h4v1H5zM11 53h1v1H11zM13 53h1v1H13zM16 53h1v1H16zM20 53h2v1H20zM25 53h1v1H25zM27 53h1v1H27zM29 53h3v1H29zM33 53h1v1H33zM35 53h1v1H35zM40 53h3v1H40zM45 53h1v1H45zM48 53h2v1H48zM53 53h2v1H53zM59 53h1v1H59zM61 53h1v1H61zM63 53h2v1H63zM66 53h2v1H66zM4 54h1v1H4zM6 54h1v1H6zM8 54h1v1H8zM10 54h1v1H10zM14 54h2v1H14zM17 54h2v1H17zM21 54h1v1H21zM24 54h1v1H24zM26 54h1v1H26zM28 54h1v1H28zM30 54h4v1H30zM35 54h4v1H35zM41 54h2v1H41zM44 54h1v1H44zM46 54h1v1H46zM49 54h2v1H49zM52 54h2v1H52zM55 54h2v1H55zM58 54h2v1H58zM62 54h3v1H62zM69 54h1v1H69zM71 54h1v1H71zM6 55h1v1H6zM8 55h1v1H8zM11 55h1v1H11zM13 55h1v1H13zM15 55h2v1H15zM25 55h2v1H25zM28 55h1v1H28zM31 55h2v1H31zM37 55h2v1H37zM40 55h1v1H40zM44 55h1v1H44zM46 55h1v1H46zM48 55h2v1H48zM52 55h1v1H52zM55 55h2v1H55zM58 55h1v1H58zM63 55h2v1H63zM66 55h1v1H66zM69 55h2v1H69zM72,55 h1v1H72zM4 56h1v1H4zM10 56h2v1H10zM14 56h6v1H14zM21 56h4v1H21zM28 56h2v1H28zM36 56h2v1H36zM39 56h1v1H39zM41 56h2v1H41zM45 56h6v1H45zM53 56h3v1H53zM60 56h1v1H60zM62 56h3v1H62zM66 56h1v1H66zM68 56h1v1H68zM70 56h1v1H70zM4 57h3v1H4zM9 57h1v1H9zM11 57h2v1H11zM17 57h1v1H17zM19 57h3v1H19zM23 57h2v1H23zM31 57h2v1H31zM34 57h3v1H34zM41 57h1v1H41zM47 57h5v1H47zM57 57h1v1H57zM59 57h1v1H59zM61 57h2v1H61zM65 57h1v1H65zM67 57h5v1H67zM10 58h1v1H10zM13 58h1v1H13zM15 58h2v1H15zM18 58h2v1H18zM21 58h1v1H21zM23 58h1v1H23zM25 58h1v1H25zM31 58h1v1H31zM38 58h1v1H38zM41 58h1v1H41zM44 58h1v1H44zM50 58h2v1H50zM54 58h1v1H54zM56 58h2v1H56zM59 58h1v1H59zM61 58h1v1H61zM65 58h1v1H65zM67 58h2v1H67zM71 58h1v1H71zM5 59h1v1H5zM9 59h1v1H9zM11 59h4v1H11zM16 59h2v1H16zM19 59h2v1H19zM22 59h1v1H22zM31 59h5v1H31zM38 59h1v1H38zM49 59h2v1H49zM52 59h2v1H52zM56 59h1v1H56zM58 59h1v1H58zM61 59h1v1H61zM64 59h1v1H64zM67 59h1v1H67zM71,59 h2v1H71zM4 60h1v1H4zM9 60h4v1H9zM14 60h1v1H14zM17 60h1v1H17zM19 60h1v1H19zM21 60h1v1H21zM23 60h3v1H23zM27 60h1v1H27zM30 60h1v1H30zM32 60h1v1H32zM36 60h3v1H36zM40 60h4v1H40zM45 60h1v1H45zM50 60h2v1H50zM53 60h4v1H53zM58 60h1v1H58zM61 60h2v1H61zM64 60h1v1H64zM67 60h1v1H67zM6 61h1v1H6zM8 61h1v1H8zM11 61h1v1H11zM14 61h2v1H14zM17 61h1v1H17zM22 61h2v1H22zM25 61h1v1H25zM27 61h1v1H27zM29 61h1v1H29zM35 61h2v1H35zM38 61h1v1H38zM41 61h1v1H41zM43 61h4v1H43zM48 61h2v1H48zM51 61h3v1H51zM55 61h1v1H55zM57 61h1v1H57zM59 61h1v1H59zM64 61h1v1H64zM66 61h2v1H66zM70 61h1v1H70zM4 62h1v1H4zM6 62h1v1H6zM8 62h4v1H8zM17 62h2v1H17zM20 62h1v1H20zM22 62h1v1H22zM26 62h1v1H26zM32 62h1v1H32zM36 62h1v1H36zM38 62h1v1H38zM42 62h3v1H42zM46 62h7v1H46zM57 62h1v1H57zM59 62h4v1H59zM65 62h2v1H65zM68,62 h5v1H68zM4 63h1v1H4zM11 63h2v1H11zM14 63h2v1H14zM17 63h3v1H17zM21 63h2v1H21zM24 63h1v1H24zM26 63h1v1H26zM29 63h2v1H29zM33 63h1v1H33zM35 63h5v1H35zM42 63h1v1H42zM45 63h1v1H45zM47 63h1v1H47zM50 63h4v1H50zM56 63h2v1H56zM59 63h4v1H59zM64 63h2v1H64zM68 63h2v1H68zM71,63 h2v1H71zM4 64h1v1H4zM7 64h2v1H7zM10 64h2v1H10zM15 64h2v1H15zM20 64h1v1H20zM23 64h3v1H23zM28 64h2v1H28zM31 64h1v1H31zM34 64h1v1H34zM36 64h5v1H36zM46 64h2v1H46zM50 64h3v1H50zM55 64h1v1H55zM58 64h1v1H58zM61 64h8v1H61zM70 64h1v1H70zM72,64 h1v1H72zM12 65h1v1H12zM14 65h1v1H14zM16 65h2v1H16zM20 65h3v1H20zM26 65h1v1H26zM29 65h1v1H29zM34 65h3v1H34zM40 65h4v1H40zM47 65h1v1H47zM49 65h1v1H49zM51 65h1v1H51zM53 65h5v1H53zM59 65h3v1H59zM63 65h2v1H63zM68 65h2v1H68zM4 66h7v1H4zM12 66h3v1H12zM16 66h4v1H16zM21 66h1v1H21zM23 66h2v1H23zM28 66h1v1H28zM31 66h3v1H31zM35 66h2v1H35zM38 66h1v1H38zM40 66h5v1H40zM48 66h1v1H48zM53 66h4v1H53zM59 66h2v1H59zM64 66h1v1H64zM66 66h1v1H66zM68 66h2v1H68zM4 67h1v1H4zM10 67h1v1H10zM12 67h2v1H12zM15 67h1v1H15zM19 67h1v1H19zM22 67h4v1H22zM27 67h2v1H27zM31 67h1v1H31zM33 67h4v1H33zM40 67h5v1H40zM46 67h1v1H46zM51 67h1v1H51zM53 67h2v1H53zM56 67h1v1H56zM60 67h1v1H60zM63 67h2v1H63zM68 67h1v1H68zM70 67h2v1H70zM4 68h1v1H4zM6 68h3v1H6zM10 68h1v1H10zM14 68h1v1H14zM18 68h1v1H18zM20 68h1v1H20zM23 68h3v1H23zM27 68h1v1H27zM29 68h2v1H29zM32 68h2v1H32zM36 68h7v1H36zM45 68h1v1H45zM47 68h1v1H47zM49 68h1v1H49zM51 68h1v1H51zM55 68h1v1H55zM58 68h4v1H58zM64 68h5v1H64zM70,68 h3v1H70zM4 69h1v1H4zM6 69h3v1H6zM10 69h1v1H10zM12 69h1v1H12zM17 69h1v1H17zM19 69h2v1H19zM22 69h1v1H22zM24 69h2v1H24zM27 69h1v1H27zM31 69h2v1H31zM34 69h8v1H34zM44 69h2v1H44zM47 69h4v1H47zM52 69h1v1H52zM54 69h3v1H54zM61 69h6v1H61zM69 69h1v1H69zM71 69h1v1H71zM4 70h1v1H4zM6 70h3v1H6zM10 70h1v1H10zM12 70h1v1H12zM14 70h2v1H14zM18 70h2v1H18zM23 70h8v1H23zM33 70h1v1H33zM36 70h1v1H36zM39 70h1v1H39zM44 70h1v1H44zM46 70h3v1H46zM50 70h2v1H50zM55 70h1v1H55zM58 70h2v1H58zM61 70h5v1H61zM67 70h1v1H67zM69 70h1v1H69zM4 71h1v1H4zM10 71h1v1H10zM13 71h2v1H13zM17 71h3v1H17zM21 71h9v1H21zM33 71h3v1H33zM37 71h1v1H37zM41 71h3v1H41zM45 71h2v1H45zM50 71h1v1H50zM53 71h2v1H53zM57 71h1v1H57zM59 71h1v1H59zM65 71h2v1H65zM68 71h2v1H68zM72,71 h1v1H72zM4 72h7v1H4zM12 72h1v1H12zM15 72h4v1H15zM21 72h2v1H21zM25 72h2v1H25zM28 72h2v1H28zM32 72h4v1H32zM37 72h3v1H37zM41 72h1v1H41zM43 72h2v1H43zM46 72h1v1H46zM49 72h3v1H49zM55 72h2v1H55zM59 72h1v1H59zM61 72h2v1H61zM65 72h1v1H65zM67 72h4v1H67z" shape-rendering="crispEdges"></path></svg>
+      </div>
+      <div id="qrWeb" style="display: none;">
+        <svg height="220" width="220" viewBox="0 0 41 41" role="img"><path fill="#FFFFFF" d="M0,0 h41v41H0z" shape-rendering="crispEdges"></path><path fill="#000000" d="M4 4h7v1H4zM13 4h1v1H13zM17 4h3v1H17zM22 4h1v1H22zM26 4h2v1H26zM30,4 h7v1H30zM4 5h1v1H4zM10 5h1v1H10zM14 5h2v1H14zM20 5h1v1H20zM22 5h2v1H22zM30 5h1v1H30zM36,5 h1v1H36zM4 6h1v1H4zM6 6h3v1H6zM10 6h1v1H10zM12 6h2v1H12zM15 6h2v1H15zM18 6h1v1H18zM20 6h3v1H20zM25 6h3v1H25zM30 6h1v1H30zM32 6h3v1H32zM36,6 h1v1H36zM4 7h1v1H4zM6 7h3v1H6zM10 7h1v1H10zM14 7h2v1H14zM17 7h1v1H17zM19 7h3v1H19zM26 7h3v1H26zM30 7h1v1H30zM32 7h3v1H32zM36,7 h1v1H36zM4 8h1v1H4zM6 8h3v1H6zM10 8h1v1H10zM12 8h3v1H12zM16 8h1v1H16zM18 8h4v1H18zM23 8h1v1H23zM27 8h1v1H27zM30 8h1v1H30zM32 8h3v1H32zM36,8 h1v1H36zM4 9h1v1H4zM10 9h1v1H10zM12 9h1v1H12zM14 9h1v1H14zM16 9h3v1H16zM20 9h2v1H20zM24 9h1v1H24zM26 9h1v1H26zM28 9h1v1H28zM30 9h1v1H30zM36,9 h1v1H36zM4 10h7v1H4zM12 10h1v1H12zM14 10h1v1H14zM16 10h1v1H16zM18 10h1v1H18zM20 10h1v1H20zM22 10h1v1H22zM24 10h1v1H24zM26 10h1v1H26zM28 10h1v1H28zM30,10 h7v1H30zM14 11h2v1H14zM17 11h1v1H17zM21 11h1v1H21zM23 11h5v1H23zM5 12h1v1H5zM8 12h1v1H8zM10 12h1v1H10zM12 12h4v1H12zM17 12h2v1H17zM20 12h2v1H20zM24 12h3v1H24zM28 12h2v1H28zM31 12h2v1H31zM34 12h1v1H34zM4 13h3v1H4zM9 13h1v1H9zM12 13h1v1H12zM16 13h1v1H16zM19 13h4v1H19zM25 13h1v1H25zM27 13h1v1H27zM29 13h1v1H29zM33 13h3v1H33zM5 14h1v1H5zM8 14h1v1H8zM10 14h2v1H10zM13 14h2v1H13zM16 14h5v1H16zM22 14h1v1H22zM27 14h1v1H27zM33 14h1v1H33zM35 14h1v1H35zM4 15h1v1H4zM8 15h1v1H8zM11 15h1v1H11zM13 15h1v1H13zM18 15h3v1H18zM24 15h2v1H24zM28 15h3v1H28zM36,15 h1v1H36zM6 16h2v1H6zM10 16h5v1H10zM19 16h2v1H19zM24 16h3v1H24zM30 16h1v1H30zM32 16h2v1H32zM5 17h1v1H5zM7 17h3v1H7zM12 17h1v1H12zM16 17h1v1H16zM18 17h2v1H18zM21 17h4v1H21zM26 17h2v1H26zM29 17h1v1H29zM31 17h1v1H31zM33 17h2v1H33zM4 18h1v1H4zM6 18h1v1H6zM8 18h3v1H8zM12 18h2v1H12zM19 18h1v1H19zM22 18h1v1H22zM25 18h1v1H25zM27 18h5v1H27zM34 18h2v1H34zM5 19h2v1H5zM12 19h6v1H12zM20 19h1v1H20zM22 19h1v1H22zM24 19h2v1H24zM27 19h1v1H27zM29 19h5v1H29zM6 20h1v1H6zM9 20h2v1H9zM12 20h1v1H12zM14 20h2v1H14zM18 20h4v1H18zM23 20h3v1H23zM30 20h1v1H30zM32 20h1v1H32zM35 20h1v1H35zM6 21h1v1H6zM11 21h4v1H11zM16 21h3v1H16zM21 21h2v1H21zM27 21h1v1H27zM29 21h1v1H29zM33 21h3v1H33zM4 22h2v1H4zM7 22h2v1H7zM10 22h3v1H10zM16 22h1v1H16zM21 22h2v1H21zM24 22h1v1H24zM27 22h3v1H27zM31 22h1v1H31zM33 22h1v1H33zM35 22h1v1H35zM4 23h1v1H4zM6 23h2v1H6zM9 23h1v1H9zM13 23h1v1H13zM16 23h1v1H16zM22 23h1v1H22zM24 23h6v1H24zM31 23h1v1H31zM35 23h1v1H35zM5 24h3v1H5zM10 24h4v1H10zM18 24h2v1H18zM21 24h2v1H21zM24 24h3v1H24zM28 24h1v1H28zM30 24h4v1H30zM35 24h1v1H35zM4 25h6v1H4zM12 25h1v1H12zM14 25h2v1H14zM18 25h1v1H18zM20 25h1v1H20zM22 25h1v1H22zM25 25h1v1H25zM27 25h1v1H27zM29 25h1v1H29zM31 25h1v1H31zM33 25h1v1H33zM35 25h1v1H35zM6 26h1v1H6zM8 26h1v1H8zM10 26h1v1H10zM12 26h1v1H12zM16 26h5v1H16zM25 26h1v1H25zM27 26h1v1H27zM29 26h1v1H29zM32 26h4v1H32zM6 27h3v1H6zM13 27h3v1H13zM17 27h2v1H17zM21 27h1v1H21zM23 27h1v1H23zM25 27h1v1H25zM28 27h2v1H28zM32 27h1v1H32zM35,27 h2v1H35zM4 28h2v1H4zM8 28h6v1H8zM15 28h3v1H15zM19 28h1v1H19zM23 28h11v1H23zM35 28h1v1H35zM12 29h2v1H12zM16 29h2v1H16zM19 29h2v1H19zM22 29h1v1H22zM24 29h1v1H24zM28 29h1v1H28zM32 29h1v1H32zM34 29h2v1H34zM4 30h7v1H4zM14 30h1v1H14zM16 30h1v1H16zM19 30h1v1H19zM24 30h1v1H24zM26 30h1v1H26zM28 30h1v1H28zM30 30h1v1H30zM32 30h2v1H32zM35 30h1v1H35zM4 31h1v1H4zM10 31h1v1H10zM15 31h1v1H15zM17 31h1v1H17zM21 31h2v1H21zM25 31h1v1H25zM28 31h1v1H28zM32 31h1v1H32zM4 32h1v1H4zM6 32h3v1H6zM10 32h1v1H10zM12 32h1v1H12zM16 32h1v1H16zM18 32h1v1H18zM20 32h1v1H20zM22 32h1v1H22zM25 32h2v1H25zM28 32h6v1H28zM36,32 h1v1H36zM4 33h1v1H4zM6 33h3v1H6zM10 33h1v1H10zM13 33h2v1H13zM18 33h1v1H18zM21 33h2v1H21zM28 33h1v1H28zM30 33h6v1H30zM4 34h1v1H4zM6 34h3v1H6zM10 34h1v1H10zM14 34h1v1H14zM17 34h2v1H17zM20 34h1v1H20zM22 34h1v1H22zM24 34h3v1H24zM28 34h1v1H28zM30 34h5v1H30zM4 35h1v1H4zM10 35h1v1H10zM12 35h1v1H12zM14 35h6v1H14zM25 35h1v1H25zM27 35h4v1H27zM4 36h7v1H4zM14 36h1v1H14zM16 36h4v1H16zM22 36h5v1H22zM28 36h3v1H28zM36,36 h1v1H36z" shape-rendering="crispEdges"></path></svg>
+      </div>
+    </div>
+    
+    <div id="qrCaption" class="qr-caption">
+      <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22C55E;"></span>
+      <span>Escanea con la cámara para añadir a contactos</span>
+    </div>
+
+    <!-- Acciones Directas -->
     <div class="contact-items">
       <a href="tel:+528113211467" class="contact-btn">
         <span style="display: flex; align-items: center;">
-          <span class="icon-badge" style="background: rgba(34, 197, 94, 0.15); color: #22C55E;">📞</span>
+          <span class="icon-badge" style="background: rgba(34, 197, 94, 0.18); color: #22C55E;">📞</span>
           +52 81 1321 1467
         </span>
         <span style="color: rgba(255, 255, 255, 0.45); font-size: 0.72rem;">Llamar</span>
@@ -274,7 +326,7 @@
 
       <a href="mailto:Xavieraivillanueva@gmail.com" class="contact-btn">
         <span style="display: flex; align-items: center; overflow: hidden;">
-          <span class="icon-badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">✉️</span>
+          <span class="icon-badge" style="background: rgba(56, 189, 248, 0.18); color: #38BDF8;">✉️</span>
           <span style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Xavieraivillanueva@gmail.com</span>
         </span>
         <span style="color: rgba(255, 255, 255, 0.45); font-size: 0.72rem;">Email</span>
@@ -285,19 +337,21 @@
       </div>
     </div>
 
-    <button id="btnDownload" class="cta-download">
+    <!-- Botón Descargar Contacto Oficial -->
+    <a href="/xavier_villanueva.vcf" download="xavier_villanueva.vcf" class="cta-download">
       <span>📥</span>
-      <span id="btnText">Guardar en Contactos (.vcf)</span>
-    </button>
+      <span>Guardar en Contactos (.vcf)</span>
+    </a>
 
+    <!-- Fila de Acciones Secundarias -->
     <div style="width: 100%; display: flex; gap: 8px;">
-      <button id="btnShare" class="share-btn" style="flex: 1;">
+      <button id="btnShare" class="share-btn">
         <span>🔗</span>
         <span id="shareText">Compartir Enlace</span>
       </button>
-      <a href="/" class="share-btn" style="flex: 1;">
+      <a href="/" class="share-btn">
         <span>🌐</span>
-        <span>Ir al Portal Principal</span>
+        <span>Portal Elévate AI</span>
       </a>
     </div>
   </div>
@@ -309,74 +363,28 @@
   <a href="/">elevate-ai-landing.vercel.app</a>
 </div>
 
-<script src="assets/qr-code-styling.js"></script>
 <script>
-  const VCARD_PAYLOAD = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'N:Villanueva;Xavier;;;',
-    'FN:Xavier Villanueva',
-    'ORG:Elévate AI;PureReserve',
-    'TITLE:CEO & Systems Architect',
-    'TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+528113211467',
-    'EMAIL;TYPE=INTERNET,WORK:Xavieraivillanueva@gmail.com',
-    'NOTE:Acceso inmediato, domina el instante.',
-    'END:VCARD'
-  ].join('\r\n');
+  function setQrMode(mode) {
+    const qrDirect = document.getElementById('qrDirect');
+    const qrWeb = document.getElementById('qrWeb');
+    const btnVcard = document.getElementById('btnModeVcard');
+    const btnWeb = document.getElementById('btnModeWeb');
+    const caption = document.getElementById('qrCaption');
 
-  // QR Code Rendering con qr-code-styling y corrección 'H'
-  const qr = new QRCodeStyling({
-    width: 220,
-    height: 220,
-    type: 'svg',
-    data: VCARD_PAYLOAD,
-    image: 'assets/elevate-logo.png',
-    margin: 4,
-    dotsOptions: {
-      type: 'rounded',
-      color: '#0A1128'
-    },
-    backgroundOptions: {
-      color: '#FFFFFF'
-    },
-    imageOptions: {
-      crossOrigin: 'anonymous',
-      margin: 4,
-      imageSize: 0.28
-    },
-    cornersSquareOptions: {
-      type: 'extra-rounded',
-      color: '#0284C7'
-    },
-    cornersDotOptions: {
-      type: 'dot',
-      color: '#22C55E'
-    },
-    qrOptions: {
-      errorCorrectionLevel: 'H'
+    if (mode === 'vcard') {
+      qrDirect.style.display = 'block';
+      qrWeb.style.display = 'none';
+      btnVcard.classList.add('active');
+      btnWeb.classList.remove('active');
+      caption.innerHTML = '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#22C55E;"></span><span>Escanea con la cámara para añadir a contactos</span>';
+    } else {
+      qrDirect.style.display = 'none';
+      qrWeb.style.display = 'block';
+      btnWeb.classList.add('active');
+      btnVcard.classList.remove('active');
+      caption.innerHTML = '<span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:#38BDF8;"></span><span>Escanea para abrir la tarjeta digital en el navegador</span>';
     }
-  });
-
-  qr.append(document.getElementById('qrcode'));
-
-  // Botón CTA para forzar la descarga del .vcf
-  document.getElementById('btnDownload').addEventListener('click', () => {
-    const blob = new Blob([VCARD_PAYLOAD], { type: 'text/vcard;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.setAttribute('download', 'xavier_villanueva.vcf');
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    const btnText = document.getElementById('btnText');
-    btnText.textContent = '¡Contacto Guardado!';
-    setTimeout(() => {
-      btnText.textContent = 'Guardar en Contactos (.vcf)';
-    }, 2500);
-  });
+  }
 
   // Botón Compartir
   document.getElementById('btnShare').addEventListener('click', async () => {
@@ -390,7 +398,6 @@
           url: shareUrl
         });
       } catch (err) {
-        // Fallback to clipboard
         navigator.clipboard.writeText(shareUrl);
         shareText.textContent = '¡Copiado!';
         setTimeout(() => { shareText.textContent = 'Compartir Enlace'; }, 2000);
