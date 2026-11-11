@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050814">
+<meta name="description" content="Tarjeta de Contacto Digital vCard 3.0 — Xavier Villanueva | CEO & Systems Architect en Elévate AI & PureReserve.">
+<link rel="icon" href="assets/elevate-logo.png" type="image/png">
+<title>Xavier Villanueva — vCard 3.0 Oficial | Elévate AI</title>
+<style>
+  :root {
+    --bg-dark: #050814;
+    --card-bg: #080E1F;
+    --blue-neon: #0284C7;
+    --cyan-neon: #38BDF8;
+    --green-circuit: #22C55E;
+    --green-glow: #4ADE80;
+    --text-white: #FFFFFF;
+    --text-muted: rgba(255, 255, 255, 0.65);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.22) 0%, transparent 55%),
+      radial-gradient(circle at 50% 100%, rgba(34, 197, 94, 0.16) 0%, transparent 55%),
+      linear-gradient(to right, rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 3rem 3rem, 3rem 3rem;
+  }
+  .card-container {
+    width: 100%;
+    max-width: 400px;
+    background: var(--card-bg);
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 35px rgba(2, 132, 199, 0.22);
+    position: relative;
+    backdrop-blur: 16px;
+  }
+  .header-gradient {
+    padding: 26px 20px 20px;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.25) 0%, rgba(56, 189, 248, 0.12) 50%, rgba(34, 197, 94, 0.15) 100%);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15);
+    text-align: center;
+    position: relative;
+  }
+  .avatar-wrap {
+    width: 76px;
+    height: 76px;
+    margin: 0 auto 14px;
+    padding: 2px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--blue-neon), var(--cyan-neon), var(--green-circuit));
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.4);
+  }
+  .avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #060B18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 4px;
+  }
+  .avatar-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  h1 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFF;
+    margin-bottom: 4px;
+  }
+  .title-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cyan-neon);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+  }
+  .org-tag {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .body-content {
+    padding: 24px 20px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .qr-wrapper {
+    background: #FFFFFF;
+    padding: 14px;
+    border-radius: 22px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.65), 0 0 25px rgba(34, 197, 94, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .qr-caption {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.55);
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    text-align: center;
+    margin-top: -6px;
+  }
+  .contact-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(56, 189, 248, 0.15);
+    text-decoration: none;
+    color: #FFF;
+    font-size: 0.82rem;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    transition: all 0.2s ease;
+  }
+  .contact-btn:hover {
+    background: rgba(56, 189, 248, 0.08);
+    border-color: var(--green-circuit);
+    transform: translateY(-1px);
+  }
+  .contact-btn .icon-badge {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  .slogan-box {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 0.78rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+  }
+  .cta-download {
+    width: 100%;
+    padding: 15px;
+    border-radius: 16px;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    background: linear-gradient(135deg, var(--blue-neon) 0%, var(--cyan-neon) 45%, var(--green-circuit) 100%);
+    color: #040814;
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .cta-download:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+  }
+  .cta-download:active {
+    transform: scale(0.98);
+  }
+  .action-row {
+    width: 100%;
+    display: grid;
+    grid-template-cols: 1fr 1fr;
+    gap: 8px;
+  }
+  .share-btn {
+    padding: 11px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color: #FFF;
+    font-size: 0.72rem;
+    font-family: ui-monospace, monospace;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .share-btn:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: var(--cyan-neon);
+  }
+  .footer-sub {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 18px;
+    font-family: ui-monospace, SFMono-Regular, monospace;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-sub a {
+    color: var(--cyan-neon);
+    text-decoration: none;
+  }
+  .footer-sub a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="header-gradient">
+    <div class="avatar-wrap">
+      <div class="avatar-inner">
+        <img src="assets/elevate-logo.png" alt="Elévate AI Logo">
+      </div>
+    </div>
+    <h1>Xavier Villanueva</h1>
+    <div class="title-tag">CEO & Systems Architect</div>
+    <div class="org-tag">Elévate AI &bull; PureReserve</div>
+  </div>
+
+  <div class="body-content">
+    <div class="qr-wrapper">
+      <div id="qrcode"></div>
+    </div>
+    <div class="qr-caption">Escanea para sincronizar en contactos</div>
+
+    <div class="contact-items">
+      <a href="tel:+528113211467" class="contact-btn">
+        <span style="display: flex; align-items: center;">
+          <span class="icon-badge" style="background: rgba(34, 197, 94, 0.15); color: #22C55E;">📞</span>
+          +52 81 1321 1467
+        </span>
+        <span style="color: rgba(255, 255, 255, 0.45); font-size: 0.72rem;">Llamar</span>
+      </a>
+
+      <a href="mailto:Xavieraivillanueva@gmail.com" class="contact-btn">
+        <span style="display: flex; align-items: center; overflow: hidden;">
+          <span class="icon-badge" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">✉️</span>
+          <span style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">Xavieraivillanueva@gmail.com</span>
+        </span>
+        <span style="color: rgba(255, 255, 255, 0.45); font-size: 0.72rem;">Email</span>
+      </a>
+
+      <div class="slogan-box">
+        "Acceso inmediato, domina el instante."
+      </div>
+    </div>
+
+    <button id="btnDownload" class="cta-download">
+      <span>📥</span>
+      <span id="btnText">Guardar en Contactos (.vcf)</span>
+    </button>
+
+    <div style="width: 100%; display: flex; gap: 8px;">
+      <button id="btnShare" class="share-btn" style="flex: 1;">
+        <span>🔗</span>
+        <span id="shareText">Compartir Enlace</span>
+      </button>
+      <a href="/" class="share-btn" style="flex: 1;">
+        <span>🌐</span>
+        <span>Ir al Portal Principal</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="footer-sub">
+  <span>Elévate AI &bull; vCard 3.0 Oficial</span>
+  <span>&bull;</span>
+  <a href="/">elevate-ai-landing.vercel.app</a>
+</div>
+
+<script src="assets/qr-code-styling.js"></script>
+<script>
+  const VCARD_PAYLOAD = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:Villanueva;Xavier;;;',
+    'FN:Xavier Villanueva',
+    'ORG:Elévate AI;PureReserve',
+    'TITLE:CEO & Systems Architect',
+    'TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+528113211467',
+    'EMAIL;TYPE=INTERNET,WORK:Xavieraivillanueva@gmail.com',
+    'NOTE:Acceso inmediato, domina el instante.',
+    'END:VCARD'
+  ].join('\r\n');
+
+  // QR Code Rendering con qr-code-styling y corrección 'H'
+  const qr = new QRCodeStyling({
+    width: 220,
+    height: 220,
+    type: 'svg',
+    data: VCARD_PAYLOAD,
+    image: 'assets/elevate-logo.png',
+    margin: 4,
+    dotsOptions: {
+      type: 'rounded',
+      color: '#0A1128'
+    },
+    backgroundOptions: {
+      color: '#FFFFFF'
+    },
+    imageOptions: {
+      crossOrigin: 'anonymous',
+      margin: 4,
+      imageSize: 0.28
+    },
+    cornersSquareOptions: {
+      type: 'extra-rounded',
+      color: '#0284C7'
+    },
+    cornersDotOptions: {
+      type: 'dot',
+      color: '#22C55E'
+    },
+    qrOptions: {
+      errorCorrectionLevel: 'H'
+    }
+  });
+
+  qr.append(document.getElementById('qrcode'));
+
+  // Botón CTA para forzar la descarga del .vcf
+  document.getElementById('btnDownload').addEventListener('click', () => {
+    const blob = new Blob([VCARD_PAYLOAD], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.setAttribute('download', 'xavier_villanueva.vcf');
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    const btnText = document.getElementById('btnText');
+    btnText.textContent = '¡Contacto Guardado!';
+    setTimeout(() => {
+      btnText.textContent = 'Guardar en Contactos (.vcf)';
+    }, 2500);
+  });
+
+  // Botón Compartir
+  document.getElementById('btnShare').addEventListener('click', async () => {
+    const shareUrl = window.location.href;
+    const shareText = document.getElementById('shareText');
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Xavier Villanueva — vCard Oficial Elévate AI',
+          text: 'Contacto oficial de Xavier Villanueva (CEO & Systems Architect)',
+          url: shareUrl
+        });
+      } catch (err) {
+        // Fallback to clipboard
+        navigator.clipboard.writeText(shareUrl);
+        shareText.textContent = '¡Copiado!';
+        setTimeout(() => { shareText.textContent = 'Compartir Enlace'; }, 2000);
+      }
+    } else {
+      navigator.clipboard.writeText(shareUrl);
+      shareText.textContent = '¡Copiado!';
+      setTimeout(() => { shareText.textContent = 'Compartir Enlace'; }, 2000);
+    }
+  });
+</script>
+
+</body>
+</html>

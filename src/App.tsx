@@ -112,13 +112,13 @@ export default function App() {
 
           {/* Header Action Buttons */}
           <div className="hidden md:flex items-center gap-3.5">
-            <button
-              onClick={() => setIsVCardOpen(true)}
+            <a
+              href="/vcard.html"
               className="px-4 py-2 rounded-xl text-xs font-mono uppercase tracking-wider text-slate-300 hover:text-white border border-sky-500/20 hover:border-[#38BDF8]/60 bg-sky-500/[0.04] hover:bg-sky-500/[0.1] transition-all flex items-center gap-2 cursor-pointer"
             >
               <Users className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>vCard CEO</span>
-            </button>
+            </a>
             <a
               href="#contacto"
               className="glow-btn-primary px-5 py-2.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2"
@@ -147,12 +147,12 @@ export default function App() {
             <a href="#orquestacion" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 py-1">Orquestación</a>
             <a href="#pure-reserve" onClick={() => setMobileMenuOpen(false)} className="block text-slate-200 py-1">PureReserve</a>
             <div className="pt-4 flex flex-col gap-3">
-              <button
-                onClick={() => { setMobileMenuOpen(false); setIsVCardOpen(true); }}
-                className="w-full py-2.5 text-center rounded-xl border border-sky-500/20 text-xs font-mono uppercase tracking-wider text-slate-200"
+              <a
+                href="/vcard.html"
+                className="w-full py-2.5 text-center rounded-xl border border-sky-500/20 text-xs font-mono uppercase tracking-wider text-slate-200 block bg-white/[0.03]"
               >
-                vCard Contacto CEO
-              </button>
+                vCard Contacto CEO (Pantalla Completa)
+              </a>
               <a
                 href="#contacto"
                 onClick={() => setMobileMenuOpen(false)}
@@ -840,9 +840,35 @@ export default function App() {
               <Download className="w-4 h-4 stroke-[2.5]" />
               <span>Descargar .vcf</span>
             </button>
+            <a
+              href="/vcard.html"
+              className="mt-2.5 w-full py-2.5 rounded-xl border border-sky-400/20 hover:border-[#22C55E] bg-white/[0.02] hover:bg-white/[0.06] text-slate-300 hover:text-white text-xs font-mono text-center block transition-all uppercase tracking-wider"
+            >
+              Abrir Vista Dedicada (/vcard.html)
+            </a>
           </div>
         </div>
       )}
+
+      {/* ── 11. BOTÓN FLOTANTE PERMANENTE: COMPARTIR VCARD / QR ── */}
+      <a
+        href="/vcard.html"
+        className="fixed bottom-6 right-6 z-40 px-4 py-3 rounded-2xl bg-[#080E1F]/90 backdrop-blur-xl border border-sky-400/30 hover:border-[#22C55E] shadow-[0_10px_35px_rgba(0,0,0,0.85),0_0_25px_rgba(34,197,94,0.3)] flex items-center gap-3 group transition-all hover:scale-105"
+        title="Abrir Tarjeta Digital vCard 3.0 para compartir"
+      >
+        <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0284C7] to-[#22C55E] p-[1.5px] flex items-center justify-center shadow-[0_0_15px_rgba(2,132,199,0.4)]">
+          <div className="w-full h-full rounded-[10px] bg-[#060B18] flex items-center justify-center p-1">
+            <img src="/assets/elevate-logo.png" alt="vCard QR" className="w-full h-full object-contain" />
+          </div>
+        </div>
+        <div className="flex flex-col text-left">
+          <span className="text-xs font-mono uppercase tracking-wider text-white font-bold flex items-center gap-1.5">
+            <span>Compartir vCard</span>
+            <span className="w-2 h-2 rounded-full bg-[#22C55E] animate-ping" />
+          </span>
+          <span className="text-[10px] font-mono text-[#38BDF8]">Xavier Villanueva &bull; CEO</span>
+        </div>
+      </a>
     </div>
   );
 }
